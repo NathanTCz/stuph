@@ -1,0 +1,147 @@
+/* Include icon css */
+@import url('icons.css');
+
+@font-face {
+    font-family: 'title_font';
+    src: url('../fonts/Architex.ttf') format('truetype');
+}
+
+input:focus {
+  outline: none;
+}
+
+.title {
+  padding: 5px;
+  
+  font-family: 'title_font';
+  font-size: 40pt;
+  color: #2C3E50;
+}
+
+.background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background: #2c3e50;
+}
+
+.login_box {
+  display: block;
+
+  text-align: center;
+
+  width: 20em;
+  height: 25em;
+
+  margin: 12em auto 0 auto;
+
+  border: 1px solid #7f8c8d;
+  background: #DDD;
+}
+
+.register_box {
+  display: block;
+
+  text-align: center;
+
+  width: 20em;
+  height: 30em;
+
+  margin: 12em auto 0 auto;
+
+  border: 1px solid #7f8c8d;
+  background: #DDD;
+}
+
+.regular_box {
+  display: block;
+
+  text-align: center;
+
+  width: 20em;
+  height: 15em;
+
+  margin: 12em auto 0 auto;
+
+  border: 1px solid #7f8c8d;
+  background: #DDD;
+}
+
+.form_box {
+  display: block;
+
+  width: 85%;
+  height: 2em;
+
+  margin: 3em auto;
+}
+
+.form_box > span {
+  background: #AAA;
+  color: #DDD;
+  font-size: 20px;
+
+  padding: 5px;
+}
+
+.form_box > span:hover {
+  color: #DDD;
+}
+
+.form_box input {
+  position: relative;
+  top: -4.6px;
+  left: -5px;
+  width: 85%;
+  height: 30.5px;
+
+  margin: 0;
+  padding: 5px;
+
+  background: #FFF;
+  border: none;
+
+  color: #666;
+}
+
+.login_submit {
+  width: auto;
+  height: 2.5em;
+
+  background: #7f8c8d;
+  border: none;
+
+  cursor: pointer;
+}
+
+.login_submit > span {
+  padding: 5px;
+
+  font-size: 15pt;
+  color: #DDD;
+}
+
+.errors {
+  display: block;
+  position: relative;
+  bottom: -25px;
+}
+
+.login_options {
+  display: block;
+  position: relative;
+  bottom: -50px;
+
+  font-size: 10pt;
+}
+
+.login_options span, a, u {
+  color: #666;
+}
