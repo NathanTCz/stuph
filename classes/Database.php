@@ -1,4 +1,6 @@
 <?php
+require '/core/config.php';
+
 class Database {
   public $DB;
 
@@ -30,8 +32,13 @@ class Database {
 
 
 //PUBLIC FUNCTIONS
-  public function __construct ($host = "localhost", $user = "root", $pass = "Rcfr5vfb7h5YzQAh", $name = "stuph") {
-    $this->DB = new mysqli($host, $user, $pass, $name);
+  public function __construct () {
+    global$DB_HOST;
+    global$DB_USER;
+    global$DB_PASS;
+    global $DB_NAME;
+
+    $this->DB = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
   }
 
   public function get_stuph_data ($user_id) {
