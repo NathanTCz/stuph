@@ -1,0 +1,6 @@
+# Logs and Databases
+*.log
+*.sql
+
+# Discrete Files
+*config.php
