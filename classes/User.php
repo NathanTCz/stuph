@@ -13,7 +13,7 @@ Class User extends Database {
   private $trash = array();
   public $trash_size = 0;
 
-  // Array of pile ids
+  // Array of pile
   private $piles = array();
 
   public function __construct($email, $uid, $z) {
@@ -132,6 +132,21 @@ Class User extends Database {
     parent::delete_pile($this->user_id, $id);
 
     $session->redirect('/home');
+  }
+
+  public function edit_pile ($id, $s_id) {
+    global $session;
+
+    foreach ($this->piles as $pile) {
+      if ($pile->id == $id) {
+        $editor = $pile;
+      }
+    }
+    $editor->s_ids[] = $s_id;
+
+    parent::edit_pile(serialize($editor->s_ids), $editor->id);
+
+    $session->redirect("/home/$editor->name");
   }
 
   public function set_piles () {

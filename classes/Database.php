@@ -1,5 +1,5 @@
 <?php
-require '/core/config.php';
+require 'core/config.php';
 
 class Database {
   public $DB;
@@ -126,6 +126,17 @@ class Database {
     ");
     
     $query->bind_param('dd', $user_id, $id);
+    $query->execute();
+  }
+
+  public function edit_pile ($s_ids, $id) {
+    $query = $this->DB->prepare ("
+      UPDATE pile
+      SET s_ids = ?
+      WHERE id = ?
+    ");
+    
+    $query->bind_param('sd', $s_ids, $id);
     $query->execute();
   }
 

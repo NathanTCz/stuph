@@ -376,18 +376,51 @@ color: #666;
   color: #000;
 }
 
-.list_item span.delete {
+.list_item span.item_tools {
   display: inline-block;
 
   float: right;
-  top: 12px;
+  top: 25px;
 
   margin-right: 15px;
-  color: transparent;
+  padding: 2px;
 }
 
-.list_item:hover span.delete {
+.list_item span.item_tools [class*="icon-"] {
+  color: transparent;
+
+  padding: 0 4px;
+}
+
+.list_item:hover span.item_tools [class*="icon-"] {
   color: #AAA;
+}
+
+div.active span.item_tools [class*="icon-"] {
+  color: #AAA;
+}
+
+div.pile_list {
+  display: none;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  background: #2c3e50;
+  border: 1px solid #2c3e50;
+
+  z-index: 999999;
+}
+
+div.pile_list > a > span {
+  display: block;
+
+  padding: 0.5em;
+}
+
+div.pile_list > a > span:hover {
+  background: #DDD;
 }
 
 .piles_cont {

@@ -21,6 +21,10 @@ $title = "Stuph";
     if (isset($_GET['op']) && $_GET['op'] == "delpile") {
         $current_user->delete_pile($item_ids[0]);
     }
+
+    if (isset($_GET['op']) && $_GET['op'] == "editpile") {
+        $current_user->edit_pile($item_ids[0], $item_ids[1]);
+    }
   }
 
   if (isset($_GET['pile'])) {
@@ -79,9 +83,26 @@ foreach ($list as $item) {
     <a href="/add/<?php echo $item->get_id();?>">
       <span id="list_title"><?php echo $item->get_title();?></span>
     </a>
-    <a href="/home/trash/<?php echo $item->get_id();?>" title="trash">
-      <span class="delete icon-remove2" ></span>
+    <span class="item_tools">
+      <a title="right click to add to a pile" oncontextmenu="getPositions(this.event, <?php echo $item->get_id();?>); return false;">
+        <span class="icon-drawer2"></span>
+      </a>
+      <a href="/home/trash/<?php echo $item->get_id();?>" title="trash">
+        <span class="icon-remove2" ></span>
+      </a>
+    </span>
+  </div>
+
+  <div id="pile_list<?php echo $item->get_id();?>" class="pile_list">
+    <?php
+    foreach ($current_user->get_piles() as $pile) {
+    ?>
+    <a href="/home/editpile/<?php echo $pile->id . 't' . $item->get_id();?>" title="click to add to this pile">
+      <span><?php echo $pile->name;?></span>
     </a>
+    <?php
+    }
+    ?>
   </div>
 <?php
 }
