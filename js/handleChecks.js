@@ -56,7 +56,6 @@ if (ev == null) { ev = window.event }
     elem1.style.display = 'block';
 
     elem2.setAttribute('class', 'list_item active');
-    elem2.style.background = '#FFF';
   }
   else {
     elem1.removeAttribute('style');
@@ -75,12 +74,13 @@ if (ev == null) { ev = window.event }
 
 function hide() {
   var elem1 = document.getElementsByClassName('pile_list');
-  var elem2 = document.getElementsByClassName('list_item active')[0];
+  var elem2 = document.getElementsByClassName('list_item active');
 
   elem1 = [].slice.call(elem1, 0);
   for (var i = 0; i < elem1.length; ++i)
     elem1[i].removeAttribute('style');
 
-  elem2.setAttribute('class', 'list_item');
-  elem2.removeAttribute('style');
+  elem2 = [].slice.call(elem2, 0);
+  for (var i = 0; i < elem2.length; ++i)
+  elem2[i].setAttribute('class', 'list_item');
 }

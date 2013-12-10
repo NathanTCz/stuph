@@ -72,7 +72,7 @@ $title = "Stuph";
 <?php
 foreach ($list as $item) {
 ?>
-  <div id="list_item<?php echo $item->get_id()?>" class="list_item">
+  <div id="list_item<?php echo $item->get_id()?>" class="list_item" oncontextmenu="getPositions(this.event, <?php echo $item->get_id();?>); return false;">
     <span id="selector"></span>
     <span id="check">
       <input id="<?php echo $item->get_id()?>" type="checkbox" name="item" value="<?php echo $item->get_id();?>" onchange="handle_checks(this.value)">

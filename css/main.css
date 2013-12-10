@@ -400,6 +400,10 @@ div.active span.item_tools [class*="icon-"] {
   color: #AAA;
 }
 
+div.active {
+  background: #FFF;
+}
+
 div.pile_list {
   display: none;
 
